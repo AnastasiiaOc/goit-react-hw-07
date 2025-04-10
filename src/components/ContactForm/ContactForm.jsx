@@ -3,6 +3,7 @@ import * as Yup from 'yup';
 import css from "../ContactForm/ContactForm.module.css";
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsOps';
+import { nanoid } from 'nanoid';
 
 const phoneRegExp = /^[0-9]{3}-[0-9]{2}-[0-9]{2}$/;
 
@@ -15,21 +16,21 @@ const ValidationSchema =Yup.object().shape({
     export default function ContactForm (){
     const dispatch = useDispatch();
 
-    // const handleSubmit = (values, actions) => {
-
-    //         const newContact = {
-    //         id: nanoid(),
-    //         name: values.username,
-    //         number: values.phoneNumber,
-    //         };
-    //     dispatch(addContact(newContact));
-    //     actions.resetForm();
-    //   };
-    
     const handleSubmit = (values, actions) => {
-        dispatch(addContact(values)); // Відправляємо у Redux
-        actions.resetForm();          // Очищаємо форму після сабміту
+
+            const newContact = {
+            id: nanoid(),
+            name: values.username,
+            number: values.phoneNumber,
+            };
+        dispatch(addContact(newContact));
+        actions.resetForm();
       };
+    
+    // const handleSubmit = (values, actions) => {   it is supposed to work but not with me 
+    //     dispatch(addContact(values)); // Відправляємо у Redux
+    //     actions.resetForm();          // Очищаємо форму після сабміту
+    //   };
     
        // (THE KEY in initial values (username, number) has to be the same as the name of the FIELD)
     return(<Formik initialValues = {{

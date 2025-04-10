@@ -1,7 +1,7 @@
 
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './contactsOps';
-import {selectContactsFilter} from './filtersSlice';
+import {selectNameFilter} from './filtersSlice';
 // Обробку усіх трьох екшенів (fulfilled, rejected, pending) та зміну даних у стані Redux зроби у властивості extraReducers слайсу контактів, а от властивість reducers з нього — прибери.
 // const slice = createSlice({
 //     name: "contacts",
@@ -19,7 +19,7 @@ export const selectContacts = state => state.contacts.items;
 export const selectIsLoading = state => state.contacts.loading;
 export const selectIsError = state => state.contacts.error;
 
-export const selectFilteredContacts = createSelector([selectContacts, selectContactsFilter], (contacts, contactsFilter) => {
+export const selectFilteredContacts = createSelector([selectContacts, selectNameFilter], (contacts, contactsFilter) => {
     return contacts.filter(contact => contact.name.toLowerCase().includes(contactsFilter.toLowerCase()));
   });
 
@@ -71,3 +71,6 @@ extraReducers: (builder) => {
 
 // export const { addContact, deleteContact } = slice.actions; no reducer we replaced it by extrareducer so no export
 export default contactsSlice.reducer;
+
+// ===================================
+

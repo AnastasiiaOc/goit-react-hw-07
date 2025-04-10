@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const selectContactsFilter = state => state.filters.name;  //new
+export const selectNameFilter = state => state.filters.name;  //new
 const slice = createSlice({
   name: 'filters',
   initialState: {
@@ -18,5 +18,8 @@ reducers:{
 
 export const { changeFilter } = slice.actions;  //export actions for dispatch
 export default slice.reducer;
+
+
+
 
 
