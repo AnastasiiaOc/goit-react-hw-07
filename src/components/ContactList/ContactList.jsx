@@ -7,17 +7,33 @@ export default function ContactList() {
     // const contacts = useSelector(state => state.contacts.items);
     // const filter = useSelector(state => state.filters.name);
     const users = useSelector(selectFilteredContacts);
-    return (
+    // return (
+    //     <ul className={css.contactListCard}>
+    //       {users.map(user => (
+    //         <li className={css.contactList} key={user.id}>
+    //           <Contact contactsList={user} />
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   );
+    // }
+// ===================
+ return (
         <ul className={css.contactListCard}>
           {users.map(user => (
             <li className={css.contactList} key={user.id}>
-              <Contact contactsList={user} />
+              <Contact  key={user.id}
+                  id={user.id}
+                  name={user.name}
+                  number={user.number}  />
             </li>
           ))}
         </ul>
       );
     }
-    // return (    
+    // ======================
+
+//     return (    
 //         <ul className={css.contactListCard}>
 //             {filter === ''
 //         ? contacts.map((contact, index) => (   //I added index as it showed a message that id was not unique when li  key was contact.id

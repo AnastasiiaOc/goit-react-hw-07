@@ -1,8 +1,6 @@
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import css from "../ContactForm/ContactForm.module.css";
-// import css from "../ContactForm/ContactForm"
-import { nanoid } from "nanoid";
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsOps';
 
@@ -17,21 +15,21 @@ const ValidationSchema =Yup.object().shape({
     export default function ContactForm (){
     const dispatch = useDispatch();
 
-    const handleSubmit = (values, actions) => {
-
-            const newContact = {
-                id: nanoid(),
-            name: values.username,
-            number: values.phoneNumber,
-            };
-        dispatch(addContact(newContact));
-        actions.resetForm();
-      };
-    
     // const handleSubmit = (values, actions) => {
-    //     dispatch(addContact(values)); // Відправляємо у Redux
-    //     actions.resetForm();          // Очищаємо форму після сабміту
+
+    //         const newContact = {
+    //         id: nanoid(),
+    //         name: values.username,
+    //         number: values.phoneNumber,
+    //         };
+    //     dispatch(addContact(newContact));
+    //     actions.resetForm();
     //   };
+    
+    const handleSubmit = (values, actions) => {
+        dispatch(addContact(values)); // Відправляємо у Redux
+        actions.resetForm();          // Очищаємо форму після сабміту
+      };
     
        // (THE KEY in initial values (username, number) has to be the same as the name of the FIELD)
     return(<Formik initialValues = {{

@@ -19,11 +19,11 @@ export const selectContacts = state => state.contacts.items;
 export const selectIsLoading = state => state.contacts.loading;
 export const selectIsError = state => state.contacts.error;
 
-export const selectFilteredContacts = createSelector([selectContacts, selectContactsFilter], (contact, contactFilter) => {
-    return contact.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLowerCase()));
+export const selectFilteredContacts = createSelector([selectContacts, selectContactsFilter], (contacts, contactsFilter) => {
+    return contacts.filter(contact => contact.name.toLowerCase().includes(contactsFilter.toLowerCase()));
   });
 
-    const slice = createSlice({
+    const contactsSlice = createSlice({
         name: 'contacts',
         initialState: {
           items: [],
@@ -70,4 +70,4 @@ extraReducers: (builder) => {
 });
 
 // export const { addContact, deleteContact } = slice.actions; no reducer we replaced it by extrareducer so no export
-export default slice.reducer;
+export default contactsSlice.reducer;
