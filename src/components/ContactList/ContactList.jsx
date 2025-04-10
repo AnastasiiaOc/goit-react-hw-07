@@ -6,18 +6,8 @@ import {selectFilteredContacts} from '../../redux/contactsSlice'
 export default function ContactList() {
     // const contacts = useSelector(state => state.contacts.items);
     // const filter = useSelector(state => state.filters.name);
-    const users = useSelector(selectFilteredContacts);
-    // return (
-    //     <ul className={css.contactListCard}>
-    //       {users.map(user => (
-    //         <li className={css.contactList} key={user.id}>
-    //           <Contact contactsList={user} />
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
-// ===================
+const users = useSelector(selectFilteredContacts);
+   
  return (
         <ul className={css.contactListCard}>
           {users.map(user => (
