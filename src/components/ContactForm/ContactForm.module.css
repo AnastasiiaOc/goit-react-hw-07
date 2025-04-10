@@ -1,0 +1,39 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 480px;
+    padding: 14px;
+    margin-bottom: 20px;
+    margin-left:40px;
+    border: 1px solid black;
+    border-radius: 6px;
+
+}
+
+.formField {
+    font-size: 18px;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    padding: 6px;
+   
+}
+.formLabel{
+            font-size: 18px;
+            font-weight: 500;
+            color:rgb(79, 0, 12);
+        }
+.formButton{
+    margin: auto;
+    width:150px;
+    font-size: 18px;
+    padding:10px;
+    text-align: center;
+    border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid;
+}
+
+.errorMessage{
+    color:red;
+}

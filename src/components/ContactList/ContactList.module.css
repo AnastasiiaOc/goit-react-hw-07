@@ -1,0 +1,9 @@
+.contactListCard{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+ }
+
+ .contactList{
+    list-style-type: none;
+ }

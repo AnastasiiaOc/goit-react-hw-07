@@ -1,0 +1,17 @@
+.searchTitle{
+    font-size:18px;
+    font-weight: 500; 
+    color: rgb(79, 0, 12);
+ }
+ .searchInput{
+ 
+         font-size: 18px;
+             border: 1px solid darkgray;
+             border-radius: 4px;
+             padding: 6px;
+             width: 500px;
+             margin-bottom: 20px;
+ }
+ .searchBox{
+    margin-left:40px;
+ }
